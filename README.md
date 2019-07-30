@@ -7,7 +7,7 @@ Written against .NET 4.6
 
 Server usage:
 ```csharp
-using EasyPipes;
+using Dashboard.Pipes;
 
 // IService defines the IPC interface
 public interface IService
@@ -25,7 +25,7 @@ class Calculator : IService
 }
 
 // start up
-Server server = new Server("pipename");
+Server server = new PipeServer("pipename");
 server.RegisterService<IService>(new Calculator());
 server.Start();
 
@@ -44,7 +44,7 @@ public interface IService
 }
 
 // setup client
-Client client = new Client("pipename");
+Client client = new PipeClient("pipename");
 IService service = client.GetServiceProxy<IService>();
 
 // execute remote operation
