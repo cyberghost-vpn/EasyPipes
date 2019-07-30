@@ -1,7 +1,7 @@
 # EasyPipes
-Simple C# library for NamedPipe and TCP-based IPC
+Simple C# library for NamedPipe IPC
 
-Written against .NET Standard 2.0, ought to be compatible with most modern .NET versions.
+Written against .NET 4.6
 
 ## Usage
 
@@ -53,7 +53,7 @@ int result = service.Sum(6, 12); // = 18
 
 Remarks:
 * There is a single instance of the server class used by all clients!
-* It's primarily focussed on IPC on single-machine or close-connections, so it might not perform well with long-distance internet connections.
+* It's primarily focussed on IPC on single-machine.
 * Any and all arguments or return values are serialized using DataContractSerializer, so custom types that need to cross the connection should be designed accordingly.
 
 ## Licence
